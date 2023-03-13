@@ -15,7 +15,12 @@ img {
   height: 200px;
 }
 .carouselImage {
+  display:flex;
   height: 500px;
+  align-items: center;
+  text-align: center;
+  margin-right:auto;
+  margin-left:auto;
 }
 h1,
 h2,
@@ -42,6 +47,7 @@ h4 {
 }
 td {
   vertical-align: top;
+  text-align: center;
 }
 .poem {
   font-size: 24px;

@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Stack from "@mui/material/Stack";
 import Alert from "@mui/material/Alert";
-import "./home.css";
+
 import guitar from "../../images/guitar.png";
 import guitar3 from "../../images/guitar3.jpg";
 import cello from "../../images/cello.png";
@@ -35,7 +35,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-
+import "./home.css";
 export const Home = () => {
   return (
     <body>
