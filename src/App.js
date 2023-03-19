@@ -3,7 +3,6 @@ import { Todo } from "./components/todo/todo";
 import { Header } from "./components/header/header";
 import { HashRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { TodoProvider } from "./state/todo/todo-context";
-
 export const App = () => {
   const pages = [{ name: "Todo", path: "todo" }];
   return (
