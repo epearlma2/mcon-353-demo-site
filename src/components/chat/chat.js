@@ -146,7 +146,9 @@ export const Chat = () => {
                     sx={{ backgroundColor: 'pink' }}
                   />
                   <IconButton onClick={postChat} >
-                    <AddBox />
+                    <AddBox
+                      sx={{ color: 'pink' }}
+                    />
                   </IconButton>
                 </Box>
               </Box>
