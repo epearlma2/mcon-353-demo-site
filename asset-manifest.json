@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/mcon-353-demo-site/static/css/main.47f652fc.css",
+    "main.js": "/mcon-353-demo-site/static/js/main.69dbfd19.js",
+    "static/js/787.5d944677.chunk.js": "/mcon-353-demo-site/static/js/787.5d944677.chunk.js",
+    "static/media/guitar.png": "/mcon-353-demo-site/static/media/guitar.422508c838ef95e51748.png",
+    "static/media/baruchLevine.jpeg": "/mcon-353-demo-site/static/media/baruchLevine.bade3dd1ee996ef8a1f8.jpeg",
+    "static/media/cello.png": "/mcon-353-demo-site/static/media/cello.087c4917d11cb776685f.png",
+    "static/media/flute.jpg": "/mcon-353-demo-site/static/media/flute.c5a9dfed37597674467a.jpg",
+    "static/media/musicQuote3.png": "/mcon-353-demo-site/static/media/musicQuote3.2ef9df1b9393d8627660.png",
+    "static/media/eliDachs.png": "/mcon-353-demo-site/static/media/eliDachs.ea3cc0401e856ef51cdb.png",
+    "static/media/harp.png": "/mcon-353-demo-site/static/media/harp.4f61ca82a0c3e11fa69c.png",
+    "static/media/avrahamFried.jpg": "/mcon-353-demo-site/static/media/avrahamFried.66587a2403af921f75d0.jpg",
+    "static/media/yaakovShwekey.png": "/mcon-353-demo-site/static/media/yaakovShwekey.b217112b118d5d94ba0c.png",
+    "static/media/eitanKatz.jpg": "/mcon-353-demo-site/static/media/eitanKatz.376ebd0960710cc00b64.jpg",
+    "static/media/musicQuote4.jpg": "/mcon-353-demo-site/static/media/musicQuote4.7872c2e159a7758571e5.jpg",
+    "static/media/piano.jpg": "/mcon-353-demo-site/static/media/piano.e753b273a9823a68fe3e.jpg",
+    "static/media/saxophone.png": "/mcon-353-demo-site/static/media/saxophone.7777f1fe2fb57a777b00.png",
+    "static/media/musicQuote5.jpg": "/mcon-353-demo-site/static/media/musicQuote5.92d54b8acfe291782124.jpg",
+    "static/media/guitar3.jpg": "/mcon-353-demo-site/static/media/guitar3.8f133b7181752ba27d35.jpg",
+    "static/media/simchaLeiner.jpg": "/mcon-353-demo-site/static/media/simchaLeiner.98ff8232db8bf3f66240.jpg",
+    "static/media/smile.png": "/mcon-353-demo-site/static/media/smile.dbccaa71bbd57b32c308.png",
+    "static/media/musicQuote1.jpg": "/mcon-353-demo-site/static/media/musicQuote1.a6bc083ad12f784f6da0.jpg",
+    "static/media/violin2.jpg": "/mcon-353-demo-site/static/media/violin2.2b997fb940363b4e0ded.jpg",
+    "static/media/joeyNewcomb.jpg": "/mcon-353-demo-site/static/media/joeyNewcomb.3611a430390c68b9b32d.jpg",
+    "static/media/musicQuote6.png": "/mcon-353-demo-site/static/media/musicQuote6.0ff346d152f434113451.png",
+    "index.html": "/mcon-353-demo-site/index.html",
+    "main.47f652fc.css.map": "/mcon-353-demo-site/static/css/main.47f652fc.css.map",
+    "main.69dbfd19.js.map": "/mcon-353-demo-site/static/js/main.69dbfd19.js.map",
+    "787.5d944677.chunk.js.map": "/mcon-353-demo-site/static/js/787.5d944677.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47f652fc.css",
+    "static/js/main.69dbfd19.js"
+  ]
+}
