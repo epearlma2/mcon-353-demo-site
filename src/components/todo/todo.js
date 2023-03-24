@@ -21,7 +21,7 @@ export const Todo = () => {
   const [input, setInput] = useState('');
 
   const addTodo = () => {
-    if (input.length >0 ) {
+    if (input.length > 0) {
       todoDispatch({
         type: TodoActions.ADD,
         todo: { label: input, completed: false },
@@ -55,21 +55,21 @@ export const Todo = () => {
 
   return (
     <div>
-      <Container maxWidth="lg" sx={{textAlign:'center'}}>
+      <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
         <h1>
           To Do
-          </h1>
+        </h1>
 
-        <Box sx={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50rem', textAlign: 'center', align: 'center' }}>
+        <Box sx={{ marginLeft: 'auto', marginRight: 'auto', maxWidth: '50rem', textAlign: 'center', align: 'center' }}>
           <Box sx={{ marginLeft: 'auto', marginRight: 'auto', margin: '2rem', alignItems: 'center' }}>
             <Input
               placeholder=" Enter a task."
               onChange={onInput}
               value={input}
               onKeyUp={onInputKeyUp}
-              sx={{borderRadius: '0.8rem', width: '60%', marginRight: '0.5rem', backgroundColor: 'pink' }}
+              sx={{ borderRadius: '0.8rem', width: '60%', marginRight: '0.5rem', backgroundColor: 'pink' }}
             />
-            <IconButton sx={{ color: 'white'}} onClick={addTodo}>
+            <IconButton sx={{ color: 'white' }} onClick={addTodo}>
               <AddIcon />
             </IconButton>
           </Box>
@@ -80,25 +80,38 @@ export const Todo = () => {
               padding: '0.5rem',
             }}
           >
-                {(provided) => (
-                  <List
-                    sx={{
-                      background: 'pink',
-                      borderRadius: '0.4rem',
-                      minHeight: '55vh',
-                      width: '70%'
-                    }}
+            {(provided) => (
+              <List
+                sx={{
+                  background: 'pink',
+                  borderRadius: '0.4rem',
+                  minHeight: '55vh',
+                  width: '70%'
+                }}
+              >
+                {todos.map((todo, index) => (
+                  <div
+                    key={todo.id}
+                    index={index}
                   >
-                    {todos.map((todo, index) => (
-                      <div
-                        key={todo.id}
-                        index={index}
-                      >
-                      </div>
-                    ))}
-                    {provided.placeholder}
-                  </List>
-                )}
+                    {(provided, snapshot) => (
+                      <TodoListItem
+                        data-testid="todo__todo-item"
+                        key={index}
+                        todo={todo}
+                        deleteTodo={deleteTodo}
+                        toggleChecked={toggleChecked}
+                        innerRef={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+
+                      />
+                    )}
+                  </div>
+                ))}
+                {provided.placeholder}
+              </List>
+            )}
           </Box>
         </Box>
       </Container>
@@ -129,23 +142,13 @@ const TodoListItem = ({
           <ListItemIcon
             onClick={() => toggleChecked(todo)}
           >
-            <Check
-              sx={{
-                color: 'green',
-                cursor: 'pointer',
-              }}
-            />
+            <Check />
           </ListItemIcon>
         ) : (
           <ListItemIcon
             onClick={() => toggleChecked(todo)}
           >
-            <Check
-              sx={{
-                '&:hover': { color: 'green' },
-                cursor: 'pointer',
-              }}
-            />
+            <Check />
           </ListItemIcon>
         )}
       </ListItem>

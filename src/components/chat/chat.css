@@ -1,0 +1,24 @@
+input {
+    background-color: pink;
+    color: white;
+}
+
+
+.Title {
+    font-size: 72px;
+}
+
+.Chat {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    color: #b0245b;
+}
+
+.smile {
+    width: 75px;
+    height: 75px;
+}

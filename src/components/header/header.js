@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 const pages = [
   { name: "Home", path: "/" },
   { name: "Todo", path: "/todo" },
+  { name: "Chat", path: "/chat" },
 ];
 
 export function Header() {
@@ -32,11 +33,11 @@ export function Header() {
   };
 
   return (
-    <AppBar position="static"       
-    sx={{
-      background: '-webkit-linear-gradient(#ffabc8, #b0245b)',
-      color: 'black'
-    }}>
+    <AppBar position="static"
+      sx={{
+        background: '-webkit-linear-gradient(#ffabc8, #b0245b)',
+        color: 'black'
+      }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
