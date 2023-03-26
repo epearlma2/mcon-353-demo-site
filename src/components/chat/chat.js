@@ -1,6 +1,7 @@
 import "./chat.css";
-import * as React from "react";
 import smile from "../../images/smile.png";
+import send from "../../images/send.png";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { useInterval } from "../../hooks/use-interval";
 import FormControl from "@mui/material/FormControl";
@@ -63,13 +64,12 @@ export const Chat = () => {
   }
 
   function postMessage() {
-    if (currentChat != null) {
+    if (currentChat != null && inputMessage.length > 0 && username.length > 0) {
       const message = {
         chatId: currentChat.id, // required, must be an existing chat id
         username: username, // required
         text: inputMessage, // required
-      };
-
+      }
       fetch("https://z36h06gqg7.execute-api.us-east-1.amazonaws.com/messages", {
         method: "PUT",
         headers: {
@@ -77,10 +77,9 @@ export const Chat = () => {
         },
         body: JSON.stringify(message),
       });
-
       setInputMessage("");
     } else {
-      console.log("cannot post a message because currentChat is null");
+      alert("To post a message, make sure a chat is selected, a username is entered, and text is entered.");
     }
   }
 
@@ -95,8 +94,6 @@ export const Chat = () => {
   function onUsernameInput(event) {
     setUserName(event.target.value);
   }
-
-
 
   useInterval(
     (params) => {
@@ -115,10 +112,10 @@ export const Chat = () => {
 
   return (
     <center>
-      <div class="Chat">
+      <div className="Chat">
         <Box >
           <h1>
-            <img class="smile" src={smile} alt="smiley"></img>&nbsp; <b>CHAT</b>&nbsp;<img class="smile" src={smile} alt="smiley"></img>
+            <img class="smile" src={smile} alt="smiley"></img>&nbsp; <span class="single_message"><b>CHAT</b></span>&nbsp;<img class="smile" src={smile} alt="smiley"></img>
           </h1>
           <br></br>
           <Box display="center">
@@ -131,7 +128,7 @@ export const Chat = () => {
                     value={username}
                     onChange={onUsernameInput}
                     InputProps={{ style: { fontSize: "24px" } }}
-                    sx={{ backgroundColor: 'pink' }}
+                    sx={{ backgroundColor: 'pink', borderRadius: '10px' }}
                   />
                 </Box>
               </Box>
@@ -143,7 +140,7 @@ export const Chat = () => {
                     value={inputChat}
                     onChange={onChatInput}
                     InputProps={{ style: { fontSize: "24px" } }}
-                    sx={{ backgroundColor: 'pink' }}
+                    sx={{ backgroundColor: 'pink', borderRadius: '10px' }}
                   />
                   <IconButton onClick={postChat} >
                     <AddBox
@@ -168,7 +165,7 @@ export const Chat = () => {
                   <FormControl size="medium">
                     <h4>Option 2: Use Existing Chat</h4>
                     <Select
-                      sx={{ backgroundColor: 'pink' }}
+                      sx={{ backgroundColor: 'pink', borderRadius: '10px' }}
                       value={currentChat ? currentChat.id : ""}
                       onChange={(e) =>
                         setChat(chats.find((chat) => chat.id === e.target.value))
@@ -184,26 +181,21 @@ export const Chat = () => {
                 </Box>
               </Box>
             </Box>
-            <Box>
-              <h4>
-                Messages:<br></br>
-              </h4>
-              <p>
-                Using Chat: {currentChat && currentChat.name}
-              </p>
-              <Box>
+            <Box class="messages">
+              <p><h4><span class="single_message">{currentChat && currentChat.name}</span></h4></p>
+              <Box class="messages">
                 <TextField
                   onInput={onMessageInput}
                   value={inputMessage}
                   label="Type your message here"
-                  sx={{ backgroundColor: 'pink' }}
+                  sx={{ backgroundColor: 'pink', borderRadius: '10px' }}
                 />
-                <Button onClick={() => postMessage()}><h5>POST</h5></Button>
+                <Button onClick={() => postMessage()}><img class="send" title="post" src={send} alt="send"></img></Button>
               </Box>
-              <div>
+              <div class="messages">
                 {messages.map((message) => (
-                  <div key={message.id}>
-                    <p>{message.username}: {message.text}</p>
+                  <div className="text_background" key={message.id}>
+                    <span class="text"><span class="username">{message.username}</span>: <span class="single_message">{message.text}</span></span>
                   </div>
                 ))}
               </div>

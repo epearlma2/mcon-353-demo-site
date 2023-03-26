@@ -10,8 +10,8 @@ input {
 
 .Chat {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 p {
@@ -21,4 +21,37 @@ p {
 .smile {
     width: 75px;
     height: 75px;
+}
+
+.send {
+    width: 40px;
+    height: 40px;
+}
+
+.messages {
+    text-align: left;
+}
+
+.text_background {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.username {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, serif;
+}
+
+.text {
+    border-radius: 10px;
+    background-color: grey;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input {
+    border-radius: 10px;
+}
+
+.single_message {
+    font-family: cursive;
 }
