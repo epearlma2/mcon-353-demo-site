@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mcon-353-demo-site/static/css/main.45659808.css",
-    "main.js": "/mcon-353-demo-site/static/js/main.97c8bfcd.js",
+    "main.css": "/mcon-353-demo-site/static/css/main.36fa59f3.css",
+    "main.js": "/mcon-353-demo-site/static/js/main.5d84f897.js",
     "static/js/787.5d944677.chunk.js": "/mcon-353-demo-site/static/js/787.5d944677.chunk.js",
     "static/media/guitar.png": "/mcon-353-demo-site/static/media/guitar.422508c838ef95e51748.png",
     "static/media/baruchLevine.jpeg": "/mcon-353-demo-site/static/media/baruchLevine.bade3dd1ee996ef8a1f8.jpeg",
@@ -25,12 +25,12 @@
     "static/media/joeyNewcomb.jpg": "/mcon-353-demo-site/static/media/joeyNewcomb.3611a430390c68b9b32d.jpg",
     "static/media/musicQuote6.png": "/mcon-353-demo-site/static/media/musicQuote6.0ff346d152f434113451.png",
     "index.html": "/mcon-353-demo-site/index.html",
-    "main.45659808.css.map": "/mcon-353-demo-site/static/css/main.45659808.css.map",
-    "main.97c8bfcd.js.map": "/mcon-353-demo-site/static/js/main.97c8bfcd.js.map",
+    "main.36fa59f3.css.map": "/mcon-353-demo-site/static/css/main.36fa59f3.css.map",
+    "main.5d84f897.js.map": "/mcon-353-demo-site/static/js/main.5d84f897.js.map",
     "787.5d944677.chunk.js.map": "/mcon-353-demo-site/static/js/787.5d944677.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45659808.css",
-    "static/js/main.97c8bfcd.js"
+    "static/css/main.36fa59f3.css",
+    "static/js/main.5d84f897.js"
   ]
 }
