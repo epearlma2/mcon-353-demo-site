@@ -1,128 +1,91 @@
 import React, { useState, useContext } from 'react';
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Checkbox from '@mui/icons-material/Check';
+import Add from '@mui/icons-material/Add';
+import Delete from '@mui/icons-material/Delete';
 import { TodoContext } from '../../state/todo/todo-context';
 import { TodoActions } from '../../state/todo/todo-reducer';
 import {
   Box,
-  Container,
-  Input,
   List,
   ListItem,
   ListItemText,
+  IconButton,
+  TextField,
+  Checkbox,
+  Typography
 } from '@mui/material';
-
+import "./todo.css";
 
 export const Todo = () => {
   const [input, setInput] = useState('');
-  const { todos, dispatch: TodoDispatch } = useContext(TodoContext);
-
+  const { todoState, TodoDispatch } = useContext(TodoContext);
 
   const addTodo = () => {
     if (input.length > 0) {
       TodoDispatch({
         type: TodoActions.ADD,
-        Todo: { label: input, isComplete: false },
+        todo: { label: input, isComplete: false },
       });
       setInput('');
     }
   }
 
-  const deleteTodo = (Todo) => {
+  const deleteTodo = (todo) => {
     TodoDispatch({
       type: TodoActions.DELETE,
-      Todo,
+      todo,
     });
   }
 
-  const toggleChecked = (Todo) => {
+  const toggleChecked = (todo) => {
     TodoDispatch({
       type: TodoActions.TOGGLE,
-      Todo,
+      todo,
     });
   }
+
   const onInput = (event) => {
     setInput(event.target.value);
   }
 
   return (
-    <div>
-      <Container maxWidth="lg" sx={{ textAlign: 'center', backgroundColor: 'white' }}>
-        <h1>
-          To Do
-        </h1>
-        <br />
-        <Box align="center" sx={{ fontSize: "12px", fontFamily: "fantasy", color: "pink", backgroundColor: "white" }}>
-          <Input
-            align="center"
-            onChange={onInput}
+    <center>
+      <div className='background'>
+        <h3>
+          TO DO:
+        </h3>
+        <Box>
+          <TextField
+            onInput={onInput}
             value={input}
-            id="standard-basic"
-            placeholder="Enter a task."
-            variant="standard"
-            sx={{ alignItems: "center", }}
+            sx={{ width: "100%", maxWidth: 320 }}
           />
-          <AddIcon fontSize="large" onClick={addTodo} />
-        </Box>
-        <Box
-          sx={{
-            background: 'pink',
-            borderRadius: '0.8rem',
-            padding: '0.5rem',
-          }}
-        >
+          <IconButton color="black " onClick={addTodo} size="large">
+            <Add />
+          </IconButton>
           <List
-            sx={{
-
-              borderRadius: '0.4rem',
-              minHeight: '55vh',
-              width: '70%'
-            }}
+            sx={{ width: "100%", maxWidth: 400 }}
           >
-            {todos.map((Todo, index) => (
-
-              <TodoListItem
-                key={index}
-                Todo={Todo}
-                deleteTodo={deleteTodo}
-                toggleChecked={toggleChecked}
-              />
-
-            ))}
+            {todoState.todos.map((todo, index) => {
+              return (
+                <ListItem
+                  disabled={todo.isComplete}
+                  key={index}
+                >
+                  <ListItemText sx={{ color: "#eb349e" }}><Typography sx={{ fontFamily: "cursive" }}>{todo.label}</Typography></ListItemText>
+                  <IconButton onClick={() => toggleChecked(todo)}>
+                    <Checkbox
+                      checked={todo.isComplete}
+                    />
+                  </IconButton>
+                  <IconButton onClick={() => deleteTodo(todo)}>
+                    <Delete />
+                  </IconButton>
+                </ListItem>
+              );
+            })}
           </List>
-
-
         </Box>
-      </Container>
-    </div >
+      </div>
+    </center >
   );
 };
-const TodoListItem = ({
-  Todo,
-  deleteTodo,
-  toggleChecked
-}) => {
-  return (
-    <div>
-
-      <ListItem disabled={Todo.isComplete}>
-        <ListItemText primary={Todo.label} />
-
-        <DeleteIcon onClick={() => deleteTodo(Todo)}
-        />
-        {Todo.isComplete ? (
-          <Checkbox onClick={() => toggleChecked(Todo)}
-          />
-        ) : (
-          <Checkbox onClick={() => toggleChecked(Todo)}
-          />
-
-        )}
-      </ListItem>
-
-    </div>
-  );
-
-};
-

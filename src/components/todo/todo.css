@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: pink;
+}
+
+.background {
+    background-color: lightgrey;
+    width: 40%;
+    margin-top: 45px;
+    border-radius: 100px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    fill: #eb349e !important;
+}
+
+.css-et1ao3-MuiTypography-root {
+    color: #eb349e !important;
+    font-size: 1.2rem !important;
+}
